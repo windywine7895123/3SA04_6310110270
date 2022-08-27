@@ -5,7 +5,7 @@ import { TouchableHighlight } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
 const availableZipItems = [
-    { place: 'เชิงทะเล',code:'83110'},
+    { place: 'Din Daeng,Bangkok', code:'10400'},
     { place: 'Hatyai', code: '90110' },
     { place: 'Trang', code: '92000' },
     { place: 'Chiangmai', code: '50000' },
@@ -16,8 +16,8 @@ const availableZipItems = [
 const ZipItem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code})}>
         <View style={styles.zipItem}>
-            <Text>{place}</Text>
-            <Text>{code}</Text>
+            <Text style={styles.t1}>{place}</Text>
+            <Text style={styles.t1}>{code}</Text>
         </View>
     </TouchableHighlight>
 )
@@ -42,12 +42,22 @@ const styles = StyleSheet.create({
     zipItem: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     zipPlace: {
         flex: 1,
     },
     zipCode: {
         flex: 1,
+        
+    },
+    t1:{
+        fontSize: 30 ,
+        color: 'black',
+        textAlign: 'center',
+        
+    },
+    holder:{
+        backgroundColor: 'blue',
     }
 }) 

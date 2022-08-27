@@ -6,7 +6,8 @@ export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
-        temp: 0
+        temp: 0,
+        name:'-'
     })
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
