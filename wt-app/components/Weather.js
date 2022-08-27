@@ -17,7 +17,8 @@ export default function Weather(props) {
                 setForecastInfo({
                     main: json.weather[0].main,
                     description: json.weather[0].description,
-                    temp: json.main.temp}); 
+                    temp: json.main.temp,
+                    name: json.name}); 
                 })
             .catch((error) => {
                 console.warn(error);
@@ -28,9 +29,10 @@ export default function Weather(props) {
     return (
         <View>
             <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
-                <Text style={styles.t1}>Zip Code</Text>
-                <Text style={styles.t2}>{props.zipCode}</Text>
+                
                 <Forecast {...forecastInfo} />
+                <Text style={styles.t2}>Zip Code : {props.zipCode}</Text>
+
             </ImageBackground>
         </View>
     );
@@ -42,15 +44,8 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-    t1: {
-        fontSize: 40 ,
-        color: 'white',
-        textAlign: 'center',
-        backgroundColor: 'rgba(0, 0, 0, .5)',
-        width: '100%',
-    },
     t2: {
-        fontSize: 45 ,
+        fontSize: 20 ,
         color: 'white',
         textAlign: 'center',
         backgroundColor: 'rgba(0, 0, 0, .5)',
