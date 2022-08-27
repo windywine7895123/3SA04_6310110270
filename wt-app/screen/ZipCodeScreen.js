@@ -5,7 +5,7 @@ import { TouchableHighlight } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
 const availableZipItems = [
-    { place: 'Din Daeng,Bangkok', code:'10400'},
+    { place: 'Bangkok', code:'10400'},
     { place: 'Hatyai', code: '90110' },
     { place: 'Trang', code: '92000' },
     { place: 'Chiangmai', code: '50000' },
@@ -27,6 +27,7 @@ export default function ZipCodeScreen(){
     const navigation = useNavigation()
     return (
         <View >
+            <Text style={styles.t2}>City-Zipcode</Text>
             <FlatList
                 data={availableZipItems}
                 keyExtractor={_keyExtractor}
@@ -53,6 +54,13 @@ const styles = StyleSheet.create({
     t1:{
         fontSize: 30 ,
         color: 'white', 
+    },
+    t2:{
+        fontSize: 40 ,
+        color: 'white',
+        backgroundColor:'lightsalmon',
+        textAlign: 'center',
+        fontWeight: "bold"
     },
     backdrop:{
         backgroundColor:'rosybrown',
