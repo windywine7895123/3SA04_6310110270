@@ -21,17 +21,17 @@ const ZipItem = ({place, code, navigation}) => (
         </View>
     </TouchableHighlight>
 )
-
 const _keyExtractor = item => item.code
 
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
     return (
-        <View>
-        <FlatList
-            data={availableZipItems}
-            keyExtractor={_keyExtractor}
-            renderItem={({item}) => <ZipItem {...item} navigation={navigation}/>}
+        <View >
+            <FlatList
+                data={availableZipItems}
+                keyExtractor={_keyExtractor}
+                renderItem={({item}) => <ZipItem {...item} navigation={navigation}/>}
+                style={styles.backdrop}
             />
             <StatusBar style="auto" />
         </View>
@@ -45,19 +45,18 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     zipPlace: {
-        flex: 1,
+        flex:1 ,
     },
     zipCode: {
-        flex: 1,
-        
+        flex:1 ,
     },
     t1:{
         fontSize: 30 ,
-        color: 'black',
-        textAlign: 'center',
-        
+        color: 'white', 
     },
-    holder:{
-        backgroundColor: 'blue',
-    }
+    backdrop:{
+        backgroundColor:'rosybrown',
+        width: '100%',
+        height: '100%',
+    },
 }) 
